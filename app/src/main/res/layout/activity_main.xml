@@ -43,7 +43,7 @@
 
         <EditText
             android:id="@+id/editTextQuantity"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="@string/enter_quantity"
             android:textSize="20sp"
@@ -68,11 +68,11 @@
 
         <EditText
             android:id="@+id/textViewResult"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="@string/result"
             android:enabled="false"
-            android:paddingRight="78dp"
+            android:inputType="numberDecimal"
             android:textStyle="bold"
             android:textSize="20sp" />
 
@@ -80,12 +80,37 @@
             android:id="@+id/spinnerConvertTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="68dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAddition"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#C6009688"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/textViewAddResult"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/addition"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerAddInUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonConvertUnit"
+        android:id="@+id/button_convert_or_add_units"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -99,7 +124,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="80dp"
         android:text="Add Quantity"
         android:textSize="20sp"
         android:textStyle="bold"

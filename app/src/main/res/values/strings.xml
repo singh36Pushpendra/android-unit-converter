@@ -3,4 +3,5 @@
     <string name="unit_converter">Unit Converter</string>
     <string name="enter_quantity">Enter Quantity</string>
     <string name="result">Result</string>
+    <string name="addition">Add</string>
 </resources>
