@@ -1,6 +1,7 @@
 package com.example.unitconversion
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -23,11 +24,11 @@ class MainActivity : AppCompatActivity() {
                 if (layoutAddition.visibility == GONE) {
                     textViewResult.hint = "Enter Quantity"
                     textViewResult.isEnabled = true
+                    textViewAddResult.setText("")
                     layoutAddition.visibility = VISIBLE
                     buttonConvertOrAddUnits.text = "Add Units"
                     buttonAddQuantity.text = "Hide Add Quantity"
-                }
-                else {
+                } else {
                     textViewResult.hint = "Result"
                     textViewResult.setText("")
                     textViewResult.isEnabled = false
@@ -42,10 +43,15 @@ class MainActivity : AppCompatActivity() {
             with(binding) {
 
                 if (layoutAddition.visibility == GONE) {
-                    ConvertUnitButton().onClickOfIt(this)
-                }
-                else {
-                    AddUnitsButton().onClickOfIt(this)
+                    if (editTextQuantity.text.toString() == "") {
+                        textViewResult.setText("0")
+                    } else
+                        ConvertUnitButton().onClickOfIt(this)
+                } else {
+                    if (editTextQuantity.text.toString() == "" || textViewResult.text.toString() == "")
+                        textViewAddResult.setText("0")
+                    else
+                        AddUnitsButton().onClickOfIt(this)
                 }
             }
 
